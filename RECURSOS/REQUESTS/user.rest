@@ -1,0 +1,64 @@
+# Genera el Login, Reorna el token
+POST http://127.0.0.1:8000/api/auth/login
+content-type: application/json
+
+{
+    "email": "patana@gmail.com",
+    "password": "password"
+}
+
+
+###
+# Mustra todos los usuarios
+GET http://127.0.0.1:8000/api/user
+content-type: application/json
+Authorization: Bearer 3|buHVQq37XeBJngwyZnVmse2qtriXDRoWFpnJqy69
+
+
+###
+# Crea un usuario
+POST http://127.0.0.1:8000/api/user
+content-type: application/json
+Authorization: Bearer 3|buHVQq37XeBJngwyZnVmse2qtriXDRoWFpnJqy69
+
+{
+	"name": "Juan Carlos Bodoque",
+    "email": "jbodoque@gmail.com",
+	"password": "password",
+	"password_confirmation": "password"
+}
+
+
+###
+# Muestra un usuario
+GET http://127.0.0.1:8000/api/user/5
+content-type: application/json
+Authorization: Bearer 3|buHVQq37XeBJngwyZnVmse2qtriXDRoWFpnJqy69
+
+
+
+###
+# Actualiza un usuario
+PUT http://127.0.0.1:8000/api/user/5
+content-type: application/json
+Authorization: Bearer 3|buHVQq37XeBJngwyZnVmse2qtriXDRoWFpnJqy69
+
+{
+	"name": "Tulio Triviño",
+    "email": "ttrivino@gmail.com",
+	"password": "12345678",
+	"password_confirmation": "12345678"
+}
+
+###
+# Elimina un usuario
+DELETE http://127.0.0.1:8000/api/user/5
+Content-Type: application/json
+Authorization: Bearer 3|buHVQq37XeBJngwyZnVmse2qtriXDRoWFpnJqy69
+
+
+
+###
+# Cierra sesión
+POST http://127.0.0.1:8000/api/auth/logout
+Authorization: Bearer 3|buHVQq37XeBJngwyZnVmse2qtriXDRoWFpnJqy69
